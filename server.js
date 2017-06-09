@@ -64,8 +64,8 @@ app.post('/blogdata', (req, res) => {
     })
 })
 
-app.delete('blogposts/:id', (req, res) => {
-    BlogPosts
+app.delete('/blogdata/:id', (req, res) => {
+    BlogPost
     .findByIdAndRemove(req.params.id)
     .exec()
     .then(() => {
@@ -77,7 +77,7 @@ app.delete('blogposts/:id', (req, res) => {
     })
 });
 
-app.put('blogposts/:id', (req, res) => {
+app.put('/blogdata/:id', (req, res) => {
     if(!(req.params.id && req.body.id && req.params.id === req.body.id)) {
         res.status(400).json({message: 'request path ID and request body ID must match'})
     }
