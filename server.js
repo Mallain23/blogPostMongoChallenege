@@ -55,7 +55,7 @@ app.post('/blogdata', (req, res) => {
     .create({
         title: req.body.title,
         author: req.body.author,
-        content: req.bodu.content
+        content: req.body.content
     })
     .then(post => res.status(201).json(post.apiRepr()))
     .catch(err => {
